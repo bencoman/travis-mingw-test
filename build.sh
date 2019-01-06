@@ -11,7 +11,5 @@ set +x
 if uname -a | grep -q 'Microsoft' ; then
 	mkdir -p /mnt/c/tmp/hello
 	cp build/* /mnt/c/tmp/hello
-	echo Now in the Windows shell CMD.EXE do...
-	echo '  cd C:\\tmp\\hello'
-	echo '  hello-w32.exe'
+	echo 'Copied build products to C:\\tmp\\hello'
 fi
