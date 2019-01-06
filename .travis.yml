@@ -5,22 +5,29 @@ language: c
 sudo: required
 
 addons:
-    apt:
-      update: true
-
+  apt:
+    update: true
 
 notifications:
   email:
-    - btc@openInWorld.com
+  - btc@openInWorld.com
 
 jobs:
   fast_finish: true
   include:
     env: ARCH="linux32x86" FLAVOR="squeak.cog.spur"
 
-install: ./travis_install.sh
+install: "./travis_install.sh"
 
-script: 
-  - pwd 
-  - ls -l 
-  - ./travis_build.sh
+script:
+- pwd
+- ls -l
+- "./travis_build.sh"
+
+deploy:
+  provider: releases
+  api_key:
+    secure: EFljC5ULmJB72SoG1z2gpCaViUTAkkYVdqlgw9RIi6GawRnoeOarnl+9ejDL8o2wMcWFioqfiYlgzThMuzU4YHUQUsW1IS4QIihtOCu6oWx2VpWp4PjpEi2Z1AYWVDVjKxckil2GTyu+LVSPf7tKyLjw9whEQOV9R/GJ8fLaTEXysholWvQy87AepsMDi1G3REuGJv8sL7fB+5iSRCZlJPR06I9Cu6nCwueCZh70QQlCs+IA/d40nYu7p77CQoo27Pe5PhNiNAVmp4hC6ENHNjKiJ/66/BIbrWVc8NESa0Kvw5LYiQO++1YetH0t7uNy+IARAQMoPbSmD2+Gjsl5aTogZMbDSEpFiHav+pqFRhkime+K9n+HOXIiKQ7ym3EiVJ/3cx/9qv7iYMoRBZOI5AkmEfJeIyxnqtsK97aaTBk55e4ezrat4pduUykwFdYio+yHshkziXj72id3q4JzRJYavm1tlDhrLvObkTati0aXAoWE+iPAttcIKPB8f40GpF9LRYqRmyWwYYSVFTCHTu/YEx8VuOr/8rny6PgXhoM9CedsaZ6YZ4O14h9HIYsRSxWTxS5eZrrsdtPGKMYgNzpcaMHuZ82zw+A6Lc8aBfVzoscu/YAH3fxJHo2fq+ZqcBj3joYX5X+ZAxKE9C/Q2T0bQKELG89rgY8rLpBgg38=
+  file: build/hello-w32.exe
+  on:
+    repo: bencoman/travis-mingw-test
