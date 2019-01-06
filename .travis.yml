@@ -8,12 +8,12 @@ notifications:
   email:
   - btc@openInWorld.com
 
-install: "./travis_install.sh"
+install: "./install.sh"
 
 script:
   - pwd
   - ls -l
-  - "./travis_build.sh"
+  - "./build.sh"
 
 deploy:
   provider: releases
