@@ -4,25 +4,16 @@ language: c
 
 sudo: required
 
-addons:
-  apt:
-    update: true
-
 notifications:
   email:
   - btc@openInWorld.com
 
-jobs:
-  fast_finish: true
-  include:
-    env: ARCH="linux32x86" FLAVOR="squeak.cog.spur"
-
 install: "./travis_install.sh"
 
 script:
-- pwd
-- ls -l
-- "./travis_build.sh"
+  - pwd
+  - ls -l
+  - "./travis_build.sh"
 
 deploy:
   provider: releases
