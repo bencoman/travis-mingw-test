@@ -1,4 +1,4 @@
-#!/bin/sh +x
+#!/bin/sh -x
 uname -a
 cat /etc/lsb-release
-apt list --installed
+apt list --installed | grep mingw

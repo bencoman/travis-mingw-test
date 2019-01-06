@@ -18,9 +18,8 @@ jobs:
   include:
     env: ARCH="linux32x86" FLAVOR="squeak.cog.spur"
 
-#install: ./travis_install.sh
+install: ./travis_install.sh
 
 script: 
   - pwd 
   - ls -l 
-  - ./travis_install.sh
