@@ -1,0 +1,21 @@
+language: c
+
+sudo: required
+
+addons:
+    apt:
+      update: true
+
+
+notifications:
+  email:
+    - btc@openInWorld.com
+
+jobs:
+  fast_finish: true
+  include:
+    env: ARCH="linux32x86" FLAVOR="squeak.cog.spur"
+
+install: ./scripts/ci/travis_install.sh
+
+script: ./scripts/ci/travis_install.sh
